@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+ <html lang="en"> 
+ <head>
+    <meta charset="UTF-8">
+    <title>Tasty Bites Restaurant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Tasty Bites Restaurant</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#cart">Cart (<span id="cart-count">0</span>)</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h2>Experience The Taste of Perfection</h2>
+        <p>Delicious food made with love ❤️</p>
+        <button onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">
+            Order Now
+        </button>
+    </div>
+</section>
+
+<section id="menu">
+    <h2>Our Special Menu</h2>
+    <div class="menu-container">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=80">
+             <h3>Paneer Butter Masala</h3>
+            <p>₹220</p>
+            <button onclick="addToCart('Paneer Butter Masala',220)">Add to Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=800&q=80">
+            <h3>Chicken Fried Biryani</h3>
+            <p>₹200</p>
+            <button onclick="addToCart('Chicken Biryani',200)">Add to Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=800&q=80">
+            <h3>Butter Chicken</h3>
+            <p>₹280</p>
+            <button onclick="addToCart('Butter Chicken',280)">Add to Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?auto=format&fit=crop&w=800&q=80">
+            <h3>Veg Noodles</h3>
+            <p>₹170</p>
+            <button onclick="addToCart('Veg Noodles',170)">Add to Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?auto=format&fit=crop&w=800&q=80">
+            <h3>Chicken DumBiryani</h3>
+            <p>₹180</p>
+            <button onclick="addToCart('Chicken DumBiryani',180)">Add to Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=800&q=80">
+            <h3>Chicken 65</h3>
+            <p>₹230</p>
+            <button onclick="addToCart('Chicken 65',230)">Add to Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80">
+             <h3>Combo Platter</h3>
+            <p>₹300</p>
+            <button onclick="addToCart('Combo Platter',300)">Add to Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=800&q=80">
+            <h3>Ice Cream</h3>
+            <p>₹100</p>
+            <button onclick="addToCart('Ice Cream',100)">Add to Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80">
+            <h3>Cold Coffee</h3>
+            <p>₹100</p>
+            <button onclick="addToCart('Cold Coffee',100)">Add to Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=800&q=80">
+            <h3>Creamy Creamy Donuts</h3>
+            <p>₹60</p>
+            <button onclick="addToCart('Creamy Creamy Donuts',60)">Add to Cart</button>
+        </div>
+
+    </div>
+</section>
+
+<section id="cart">
+    <h2>Your Cart</h2>
+    <ul id="cart-items"></ul>
+    <h3>Total: ₹<span id="total-price">0</span></h3>
+    
+    <!-- ✅ Proceed Button -->
+    <button onclick="openPayment()">Proceed to Payment</button>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: tastybites@gmail.com</p>
+    <p>Phone: +91 6303018761</p>
+</section>
+
+<footer>
+    <p>© 2026 Tasty Bites Restaurant</p>
+</footer>
+
+<!-- ✅ PAYMENT POPUP -->
+<div id="payment-popup" class="popup">
+    <div class="popup-content">
+        <h2>Payment Details</h2>
+        <input type="text" id="name" placeholder="Full Name">
+        <input type="text" placeholder="Card Number">
+        <input type="text" placeholder="Expiry Date">
+        <input type="text" placeholder="CVV">
+        <button onclick="makePayment()">Pay Now</button>
+        <button onclick="closePayment()">Cancel</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
