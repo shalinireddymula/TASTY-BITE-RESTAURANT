@@ -14,4 +14,4 @@ Tasty Bite Restaurant is a responsive restaurant website built using HTML, CSS, 
 - JavaScript
 
 ## Author
-Your Name
+MULA SHALINI
